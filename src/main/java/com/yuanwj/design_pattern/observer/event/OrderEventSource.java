@@ -3,7 +3,7 @@ package com.yuanwj.design_pattern.observer.event;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderEventSource implements EventSource{
+public class OrderEventSource {
 
     private List<EventListener> listeners;
 
@@ -14,7 +14,6 @@ public class OrderEventSource implements EventSource{
         listeners.add(eventListener);
     }
 
-    @Override
     public void onEvent(Event event) {
         listeners.forEach(listeners->listeners.listener(event));
     }

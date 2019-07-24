@@ -11,12 +11,7 @@ public class EventTest {
         orderEventSource.addListener(orderListener);
         orderEventSource.addListener(orderReportListener);
 
-        MoveEvent moveEvent = new MoveEvent();
-        moveEvent.setMoveCode("sflskdfjslk");
-        MoveListener moveListener = new MoveListener();
-        orderEventSource.addListener(moveListener);
 
         orderEventSource.onEvent(orderEvent);
-        orderEventSource.onEvent(moveEvent);
     }
 }
