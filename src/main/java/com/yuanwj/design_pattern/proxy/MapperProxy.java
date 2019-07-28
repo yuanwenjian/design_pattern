@@ -14,14 +14,11 @@ public class MapperProxy<T> implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("===start====");
-//        if (Object.class.equals(method.getDeclaringClass())) {
-//            return method.invoke(proxy, args);
-//        }
+        if (Object.class.equals(method.getDeclaringClass())) {
+            return method.invoke(proxy, args);
+        }
         Object result = method.invoke(proxy, args);
         System.out.println("=======end==========");
         return result;
     }
-
-
-
 }
